@@ -1,21 +1,20 @@
-version: '3'
+version: "3"
 
 services:
   proxy:
     image: jc21/nginx-proxy-manager:latest
     restart: unless-stopped
     ports:
-      - '80:80'
-      - '443:443'
-      - '81:81'
+      - "80:80"
+      - "443:443"
+      - "81:81"
     volumes:
       - ./data:/data
       - ./letsencrypt:/etc/letsencrypt
     networks:
-        - proxy_manager
+      - proxy_manager
 
 networks:
   proxy_manager:
     driver: bridge
     name: proxy_manager
-
