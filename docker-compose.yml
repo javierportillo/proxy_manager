@@ -12,7 +12,13 @@ services:
       - ./data:/data
       - ./letsencrypt:/etc/letsencrypt
     networks:
+      - default
       - proxy_manager
+
+  verdaccio:
+    image: verdaccio/verdaccio
+    volumes:
+      - ./verdaccio/storage:/verdaccio/storage
 
 networks:
   proxy_manager:
