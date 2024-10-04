@@ -17,6 +17,7 @@ services:
 
   verdaccio:
     image: verdaccio/verdaccio
+    restart: unless-stopped
     volumes:
       - verdaccio_storage:/verdaccio/storage
       - ./verdaccio/conf:/verdaccio/conf
